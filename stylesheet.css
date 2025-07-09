@@ -1,0 +1,853 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease-in-out;
+  scroll-behavior: smooth;
+  color: #f1e8e8;
+  
+}
+
+.body {
+  color: #111010;
+  background: #081b29;
+}
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 10%;
+  background: rgba(10, 10, 10, 0.6);
+   backdrop-filter: blur(10px);
+  box-shadow: 0 0 10px #0ef; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+.logo {
+  position: relative;
+  font-size: 25px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: default;
+  opacity: 0;
+  animation: slideRight 1s ease forwards;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  outline: none;
+}
+
+.navbar a {
+  display: inline-block;
+  font-size: 25px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 35px;
+  transition: 0.3s;
+  opacity: 0;
+  animation: slideTop 0.5s ease forwards;
+  animation-delay: calc(var(--i) * 0.2s);
+}
+.navbar a:hover {
+  color: #0ef;
+}
+.home {
+  position: relative;
+  width: 100%;
+  justify-content: space-between;
+  height: 100vh;
+  /* background:url(pexels-instawally-176851.jpg); */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding: 70px 10% 0;
+}
+.home-content {
+  max-width: 600px;
+}
+.home-content h3 {
+  font-size: 32px;
+  font-weight: 700;
+  opacity: 0;
+  animation: slideBottom 1s ease forwards;
+  animation-delay: 0.7s;
+}
+.home-content h3:nth-of-type(2) {
+  margin-bottom: 30px;
+  animation: slideTop 1s ease forwards;
+  animation-delay: 0.7s;
+}
+.home-content h3 span {
+  color: #0ef;
+}
+.home-content h1 {
+  font-size: 56px;
+  font-weight: 700;
+  margin: -3px 0;
+  opacity: 0;
+  animation: slideRight 1s ease forwards;
+  animation-delay: 1s;
+}
+.home-content p {
+  font-size: 20px;
+  opacity: 0;
+  animation: slideRight 1s ease forwards;
+}
+.home-sci a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 2px solid rgb(191, 0, 255);
+  border-radius: 50%;
+  font-size: 20px;
+  color: #0ef;
+  text-decoration: none;
+  transition: 0.5s ease;
+  opacity: 0;
+  animation: slideLeft 1s ease forwards;
+  animation-delay: calc(var(--i) * 0.2s);
+  margin: 30px 15px 30px 0;
+}
+.home-sci a:hover {
+  background: #0ef;
+  color: #081b29;
+  box-shadow: 0 0 20px #0ef;
+}
+.btn-box {
+  display: inline-block;
+  padding: 12px 28px;
+  background: #0ef;
+  border-radius: 40px;
+  font-size: 16px;
+  color: #081b29;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-weight: 600;
+  opacity: 0;
+  animation: slideTop 1s ease forwards;
+  animation-delay: 2s;
+  box-shadow: 0 0 5px #0ef,
+  0 0 25px #0ef;
+}
+.btn-box:hover {
+  box-shadow: 0 0 5px rgb(255, 0, 238), 0 0 25px rgb(255, 0, 238),
+    0 0 50px rgb(255, 0, 238), 0 0 100px rgb(255, 0, 238),
+    0 0 200px rgb(255, 0, 238);
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(-100px); /* start 100px to the left */
+    opacity: 0; /* fully transparent */
+  }
+  100% {
+    transform: translateX(0px); /* end at original position */
+    opacity: 1; /* fully visible */
+  }
+}
+@keyframes slideLeft {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0px); /* end at original position */
+    opacity: 1; /* fully visible */
+  }
+}
+@keyframes slideTop {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@keyframes slideBottom {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+#about {
+  padding-top: 100px;
+}
+
+#projects {
+  padding-top: 100px;
+}
+#skills {
+  padding-top: 100px;
+}
+#services {
+ padding-top: 100px;
+}
+
+
+.about {
+  height: 100vh;
+  /* background: url(pexels-instawally-176851.jpg);  */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 60px 10%;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.about-img {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  padding: 8px;
+  background: linear-gradient(135deg, #00f0ff, #ae00ff);
+  animation: pulseGlow 2s infinite alternate;
+  flex-shrink: 0;
+}
+
+.about-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #111;
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 20px #0ff, 0 0 40px #a0f, 0 0 60px #a0f;
+  }
+  100% {
+    box-shadow: 0 0 40px #0ff, 0 0 80px #a0f, 0 0 120px #a0f;
+  }
+}
+
+.about-text {
+  max-width: 600px;
+  color: #ededed;
+}
+
+.about-text h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.about-text h4 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.about-text p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.about-text .btn-box {
+  margin-top: 20px;
+}
+.about-text h2{
+    font-size: 60px;
+
+}
+.about-text h2 span{
+    color: #0ef;
+}
+.about-text h4{
+    font-size: 29px;
+    font-weight: 600;
+    color:#fff;
+    line-height: 1.7;
+    margin: 15px 0 30px;
+}
+.about-text p{
+    color: aliceblue;
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 4rem;
+}
+.home-img {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-img img {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 6px solid #0ef;
+  box-shadow: 0 0 30px #0ef, 0 0 60px #9b59b6;
+}
+#services{
+    color: aliceblue;
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 4rem;
+    
+}
+.sub-title{
+    text-align: center;
+    font-size: 60px;
+    padding-bottom: 70px;
+}
+.sub-title span{
+    color: #0ef;
+}
+.container{
+    padding:0 90px;
+
+
+}
+.services-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(259px,1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+    
+}
+.services-list div{
+ background: linear-gradient(to left, rgb(216, 179, 179), rgb(37, 242, 37)) !important;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 400;
+    border-right: none;
+    border-radius: 20px;
+    transition: background 0.5s, transform 0.5s;
+    box-shadow: 1px 1px 20px #012290f7,
+    1px 1px 40px #0053b857;
+    
+}
+.services {
+  padding: 60px 20px;
+   /* background: url('pexels-instawally-176851.jpg') no-repeat center center/cover; */
+  color: #fff;
+  text-align: center;
+  backdrop-filter: brightness(0.9); /* optional, makes text more readable */
+}
+.services-list div i{
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+.services-list div h2{
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+
+}
+.services-list div a{
+    text-decoration: none;
+    color: #000000;
+    font-size: 12px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.read {
+  display: inline-block;
+  padding: 12px 28px;
+  background: rgb(221, 214, 245);
+  border-radius: 40px;
+  font-size: 16px;
+  color: #00070c;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 0 5px #0ef, 0 0 25px #0ef;
+  transition: 0.3s ease;
+}
+
+.read:hover {
+  box-shadow: 0 0 5px rgb(255, 0, 238), 
+              0 0 25px rgb(255, 0, 238),
+              0 0 50px rgb(255, 0, 238),
+              0 0 100px rgb(240, 202, 237);
+  background: rgb(13, 14, 14);
+  color: #f0f3f5;
+}
+.services-list div:hover{
+     /* transform: translateZ(40px);
+     scale: 110%; */
+     transform: scale(1.1);
+ 
+}
+
+body {
+  background:url("27230.jpg") no-repeat center center fixed; 
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #ededed;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+#projects{
+    color: aliceblue;
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 4rem;
+    
+}
+.container2{
+    padding: 0 90px;
+
+
+}
+.projects-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(259px,1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+    
+}
+ .projects-list div{
+  /* background: linear-gradient(to right,rgb(6, 245, 30),rgb(249, 196, 22),rgb(248, 6, 26)); */
+  background: linear-gradient(to right, #3c7777, #0ec7ec, #06f3f3, #edf4f5);
+
+  padding: 40px;
+    font-size: 13px;
+    font-weight: 400;
+    border-right: none;
+    border-radius: 20px;
+    transition: background 0.5s, transform 0.5s;
+    box-shadow: 1px 1px 20px #012290f7,
+    1px 1px 40px #0053b857;
+     /* background:url("Orange IT Remote Jobs Ad Instagram Post.png"); */
+    
+    
+} 
+.projects {
+  padding: 60px 20px;
+   /* background: url('pexels-instawally-176851.jpg') no-repeat center center/cover; */
+  color: #fff;
+  text-align: center;
+  backdrop-filter: brightness(0.9); /* optional, makes text more readable */
+}
+.projects-list div i{
+    font-size: 50px;
+   
+    margin-bottom: 30px;
+}
+.projects-list div h2{
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    color: #111;
+
+}
+.projects-list div p{
+   
+    color: #111;}
+
+.projects-list div a{
+    text-decoration: none;
+    color: #000000;
+    font-size: 12px;
+    margin-top: 20px;
+    display: inline-block;
+}
+.projects-list div:hover{
+    /* transform: translateY(30px); */
+    transform: scale(1.1);
+}
+.contact{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  align-items: center;
+  gap: 3rem;
+  padding-left: 30px;
+  margin-top: 130px;
+}
+.contact-text h2{
+  font-size: 90px;
+  line-height: 1;
+  text-align: left;
+}
+.contact-text h2 span{
+  color: #0ef;
+}
+.contact-text h4{
+  margin: 15px 0;
+  color: rgb(228,228,228);
+  font-size: 20px;
+  font-weight: 600;
+}
+.contact-text p{
+  color:rgb(177,177,177);
+  font-size: 20px;
+line-height: 30px;
+margin-bottom: 2rem;
+}
+.contact-list{
+  margin-bottom: 3rem;
+}
+.contact-list li{
+  margin-bottom: 10px;
+  display: block;
+
+}
+.contact-list li{
+  margin-bottom: 10px;
+  display: block;
+
+}
+.contact-list i{
+  display: inline-block;
+  color: #0ef;
+  font-size: 20px;
+  font-weight: 600;
+  transition:all .40s ease;
+}
+.contact-list li a:hover{
+  transform: scale(1.01)translateY(-5px);
+  color: rgb(7, 84, 89);
+}
+.contact-icons i{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 2px solid #0ef;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #0ef;
+  text-decoration: none;
+  margin: 30px 15px 30px 0;
+  transition: .5s ease;
+  opacity: 0;
+  animation: slideLeft 1s ease forwards;
+  animation-delay: calc(.2s *var(--i));
+ 
+}
+.contact-icons i:hover{
+  background: #0ef;
+  outline: none;
+  box-shadow: 0 0 20px #0ef;
+
+}
+.contact-form form{
+  position: relative;
+
+}
+.contact-form form input,form textarea{
+  border:none;
+  outline: none;
+  width: 90%;
+  padding: 10px;
+  background:white;
+  color: #0a0909;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
+
+}
+.contact-form textarea{
+  resize: none;
+  height: 220px;
+
+}
+.contact-form .send {
+  display: inline-block;
+  padding: 14px 60px;
+  background: #0ef;
+  border-radius: 40px;
+  font-size: 18px;
+  color: #081b29;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 0 5px #0ef, 0 0 25px #0ef;
+  transition: 0.3s ease;
+}
+
+.contact-form .send:hover {
+  box-shadow: 0 0 5px rgb(255, 0, 238), 
+              0 0 25px rgb(255, 0, 238),
+              0 0 50px rgb(255, 0, 238),
+              0 0 100px rgb(255, 0, 238),
+              0 0 200px rgb(255, 0, 238);
+  background: #0ef;
+  color: #081b29;
+}
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #110101; /* or any color you want */
+  opacity: 1;     /* makes the placeholder fully visible */
+}
+.services-list div {
+  background: linear-gradient(to right, rgb(241, 163, 7), rgb(142, 238, 228), rgb(203, 240, 241));
+  color: #111; /* dark text for contrast */
+}
+
+.services-list div h2 {
+  color: #111;
+}
+
+.services-list div p {
+  color: #333;
+}
+
+.services-list div a {
+  color: #081b29;
+  font-weight: bold;
+}
+/* Your existing CSS here */
+
+
+html {
+  scroll-behavior: smooth;
+}
+/* =================================================== */
+/* ============== MEDIA QUERIES (Mobile) ============= */
+/* =================================================== */
+
+/* For Tablets and smaller devices */
+@media (max-width: 1024px) {
+  .header {
+    padding: 20px 5%; /* Reduce horizontal padding */
+  }
+  .home {
+    padding: 70px 5% 0;
+  }
+  .about {
+    padding: 60px 5%;
+  }
+  .container, .container2 {
+    padding: 0 5%;
+  }
+  .contact {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+
+
+/* For large mobile phones and smaller tablets */
+@media (max-width: 768px) {
+  /* Hide the navbar links for a future hamburger menu. 
+     If you don't plan to add a JS hamburger menu, 
+     you can remove this and adjust the styling below instead. */
+  .navbar {
+    /* For a real hamburger menu, you'd set this to 'display: none;' */
+    /* and have a menu icon to toggle it. */
+    /* For a CSS-only fix, we'll just adjust spacing. */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem 3%;
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(10px);
+    display: none; /* Hide it initially */
+    /* Add a class 'active' with JS to show it: .navbar.active { display: block; } */
+  }
+
+  .navbar a {
+    display: block; /* Stack links vertically */
+    font-size: 20px;
+    margin: 20px 0;
+    text-align: center;
+  }
+  /* NOTE: You'll need to add a hamburger icon and JS to toggle the navbar's display. */
+  /* This is a common pattern for mobile navigation. */
+
+
+  /* ----- Home Section ----- */
+  .home {
+    flex-direction: column-reverse; /* Puts the image on top of the text */
+    height: auto; /* Allow height to adjust to content */
+    padding: 120px 5% 50px;
+    text-align: center;
+  }
+
+  .home-content {
+    max-width: 100%;
+  }
+
+  .home-img img {
+    width: 250px; /* Slightly smaller image */
+    height: 250px;
+    margin-bottom: 30px;
+  }
+
+  .home-sci {
+    justify-content: center; /* Center the social icons */
+    margin-bottom: 20px;
+  }
+
+
+  /* ----- About Section ----- */
+  .about {
+    flex-direction: column;
+    text-align: center;
+    height: auto;
+    padding: 80px 5%;
+    gap: 30px;
+  }
+
+  .about-text {
+    max-width: 100%;
+  }
+
+  
+  /* ----- Services & Projects Grid ----- */
+  /* The grid with `auto-fit` is already responsive, but we can reduce the gap */
+  .services-list, .projects-list {
+    grid-gap: 25px;
+    margin-top: 30px;
+  }
+
+  /* ----- Contact Section ----- */
+  .contact {
+    grid-template-columns: 1fr; /* Stack the two columns */
+    gap: 2rem;
+  }
+
+  .contact-text h2 {
+    font-size: 60px; /* Reduce heading size */
+    text-align: center;
+  }
+
+  .contact-text h4, .contact-text p {
+    text-align: center;
+  }
+
+  .contact-list {
+    text-align: center;
+  }
+
+  .contact-icons {
+    text-align: center;
+  }
+  .contact-form form input,form textarea{
+    width: 100%;
+  }
+}
+
+
+/* For smaller mobile phones */
+@media (max-width: 480px) {
+  /* ----- General Font Size Adjustments ----- */
+  .logo {
+    font-size: 22px;
+  }
+  .home-content h1 {
+    font-size: 42px;
+  }
+  .home-content h3 {
+    font-size: 28px;
+  }
+  .about-text h2,
+  .sub-title {
+    font-size: 45px;
+    padding-bottom: 40px;
+  }
+  .contact-text h2{
+    font-size: 50px;
+  }
+  .about-text h4 {
+    font-size: 24px;
+  }
+  .about-text p, .home-content p {
+    font-size: 16px;
+  }
+
+  /* ----- Image Sizes ----- */
+  .home-img img {
+    width: 200px;
+    height: 200px;
+  }
+  .about-img {
+    width: 200px;
+    height: 200px;
+  }
+
+  /* ----- Spacing and Buttons ----- */
+  .btn-box {
+    padding: 10px 22px;
+    font-size: 14px;
+  }
+
+  .contact-form .send {
+    padding: 12px 50px;
+    width: 100%; /* Make send button full width */
+  }
+
+  /* ----- Keyframe animations can sometimes cause horizontal scroll on mobile */
+  /* This ensures the page stays contained. */
+  body {
+    overflow-x: hidden;
+     
+     
+  }
+}
+/* ================================================= */
+/* =========== HAMBURGER MENU STYLES =============== */
+/* ================================================= */
+
+#menu-icon {
+  font-size: 3.6rem; /* 36px */
+  color: #fff;
+  display: none; /* Hide it on desktop */
+}
+
+
+/* In your existing responsive styles, we adjust the navbar */
+@media (max-width: 768px) {
+  #menu-icon {
+    display: block; /* Show the icon on mobile */
+    cursor: pointer;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 100%; /* Position it right below the header */
+    left: 0;
+    width: 100%;
+    padding: 1rem 3%;
+    background: #100d0d; /* A solid, dark blue that matches your theme */
+    border-top: .1rem solid rgba(0, 0, 0, .2);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+    display: none; /* Hide the menu by default */
+  }
+
+  /* This is the magic rule: when the navbar has the 'active' class, it becomes visible */
+  .navbar.active {
+    display: block;
+  }
+
+  .navbar a {
+    display: block; /* Stack links vertically */
+    font-size: 2rem; /* 20px */
+    margin: 3rem 0; /* Add space between links */
+    text-align: center;
+  }
+}
+
